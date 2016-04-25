@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2830743F1CCEC57400E69D29 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2830743B1CCEC57400E69D29 /* Fabric.framework */; };
+		283074401CCEC57400E69D29 /* TwitterKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2830743C1CCEC57400E69D29 /* TwitterKit.framework */; };
+		283074411CCEC57400E69D29 /* TwitterKitResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 2830743D1CCEC57400E69D29 /* TwitterKitResources.bundle */; };
+		283074421CCEC57400E69D29 /* TwitterCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2830743E1CCEC57400E69D29 /* TwitterCore.framework */; };
+		283074461CCEC6B600E69D29 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283074451CCEC6B600E69D29 /* LoginViewController.swift */; };
 		28F468EC1CBBFB9300B1E853 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28F468EB1CBBFB9300B1E853 /* AppDelegate.swift */; };
 		28F468EE1CBBFB9300B1E853 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28F468ED1CBBFB9300B1E853 /* FirstViewController.swift */; };
 		28F468F01CBBFB9300B1E853 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28F468EF1CBBFB9300B1E853 /* SecondViewController.swift */; };
@@ -16,6 +21,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2830743B1CCEC57400E69D29 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
+		2830743C1CCEC57400E69D29 /* TwitterKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TwitterKit.framework; sourceTree = "<group>"; };
+		2830743D1CCEC57400E69D29 /* TwitterKitResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = TwitterKitResources.bundle; path = TwitterKit.framework/Versions/A/Resources/TwitterKitResources.bundle; sourceTree = "<group>"; };
+		2830743E1CCEC57400E69D29 /* TwitterCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TwitterCore.framework; sourceTree = "<group>"; };
+		283074451CCEC6B600E69D29 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		28F468E81CBBFB9300B1E853 /* around.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = around.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		28F468EB1CBBFB9300B1E853 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		28F468ED1CBBFB9300B1E853 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -31,15 +41,38 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2830743F1CCEC57400E69D29 /* Fabric.framework in Frameworks */,
+				283074421CCEC57400E69D29 /* TwitterCore.framework in Frameworks */,
+				283074401CCEC57400E69D29 /* TwitterKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		283074431CCEC64100E69D29 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				283074441CCEC65500E69D29 /* Login */,
+			);
+			name = ViewController;
+			sourceTree = "<group>";
+		};
+		283074441CCEC65500E69D29 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				283074451CCEC6B600E69D29 /* LoginViewController.swift */,
+			);
+			name = Login;
+			sourceTree = "<group>";
+		};
 		28F468DF1CBBFB9300B1E853 = {
 			isa = PBXGroup;
 			children = (
+				2830743B1CCEC57400E69D29 /* Fabric.framework */,
+				2830743C1CCEC57400E69D29 /* TwitterKit.framework */,
+				2830743D1CCEC57400E69D29 /* TwitterKitResources.bundle */,
+				2830743E1CCEC57400E69D29 /* TwitterCore.framework */,
 				28F468EA1CBBFB9300B1E853 /* around */,
 				28F468E91CBBFB9300B1E853 /* Products */,
 			);
@@ -56,6 +89,7 @@
 		28F468EA1CBBFB9300B1E853 /* around */ = {
 			isa = PBXGroup;
 			children = (
+				283074431CCEC64100E69D29 /* ViewController */,
 				28F468EB1CBBFB9300B1E853 /* AppDelegate.swift */,
 				28F468ED1CBBFB9300B1E853 /* FirstViewController.swift */,
 				28F468EF1CBBFB9300B1E853 /* SecondViewController.swift */,
@@ -77,6 +111,7 @@
 				28F468E41CBBFB9300B1E853 /* Sources */,
 				28F468E51CBBFB9300B1E853 /* Frameworks */,
 				28F468E61CBBFB9300B1E853 /* Resources */,
+				2830743A1CCEC52100E69D29 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -99,6 +134,7 @@
 				TargetAttributes = {
 					28F468E71CBBFB9300B1E853 = {
 						CreatedOnToolsVersion = 7.2.1;
+						DevelopmentTeam = HW9C536X3S;
 					};
 				};
 			};
@@ -125,6 +161,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				283074411CCEC57400E69D29 /* TwitterKitResources.bundle in Resources */,
 				28F468F81CBBFB9300B1E853 /* LaunchScreen.storyboard in Resources */,
 				28F468F51CBBFB9300B1E853 /* Assets.xcassets in Resources */,
 				28F468F31CBBFB9300B1E853 /* Main.storyboard in Resources */,
@@ -133,11 +170,28 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		2830743A1CCEC52100E69D29 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./Fabric.framework/run f27aa22a556524fceba3f0171806d0369d136600 8346270bb0529ae08173b56f5374918915613b065a6b3ca6bcb1de16e7a602fc";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		28F468E41CBBFB9300B1E853 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				283074461CCEC6B600E69D29 /* LoginViewController.swift in Sources */,
 				28F468F01CBBFB9300B1E853 /* SecondViewController.swift in Sources */,
 				28F468EC1CBBFB9300B1E853 /* AppDelegate.swift in Sources */,
 				28F468EE1CBBFB9300B1E853 /* FirstViewController.swift in Sources */,
@@ -251,6 +305,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = around/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = de.bht.ema.around;
@@ -262,6 +321,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = around/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = de.bht.ema.around;
@@ -288,6 +352,7 @@
 				28F468FE1CBBFB9300B1E853 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

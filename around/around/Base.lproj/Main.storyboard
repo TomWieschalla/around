@@ -249,10 +249,10 @@
             </objects>
             <point key="canvasLocation" x="1801" y="365"/>
         </scene>
-        <!--View Controller-->
+        <!--Login View Controller-->
         <scene sceneID="rZb-LW-Nxz">
             <objects>
-                <viewController id="sQR-A3-Aco" sceneMemberID="viewController">
+                <viewController id="sQR-A3-Aco" customClass="LoginViewController" customModule="around" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="hTT-gD-9e4"/>
                         <viewControllerLayoutGuide type="bottom" id="8PU-63-hKz"/>
@@ -280,7 +280,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
             <objects>
-                <tabBarController id="49e-Tb-3d3" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="MainViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="49e-Tb-3d3" sceneMemberID="viewController">
                     <nil key="simulatedBottomBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="W28-zg-YXA">
