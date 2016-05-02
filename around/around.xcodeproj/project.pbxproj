@@ -12,9 +12,8 @@
 		283074411CCEC57400E69D29 /* TwitterKitResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 2830743D1CCEC57400E69D29 /* TwitterKitResources.bundle */; };
 		283074421CCEC57400E69D29 /* TwitterCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2830743E1CCEC57400E69D29 /* TwitterCore.framework */; };
 		283074461CCEC6B600E69D29 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283074451CCEC6B600E69D29 /* LoginViewController.swift */; };
+		289F962B1CD7C4D300362BDF /* MyThreadsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 289F962A1CD7C4D300362BDF /* MyThreadsViewController.swift */; };
 		28F468EC1CBBFB9300B1E853 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28F468EB1CBBFB9300B1E853 /* AppDelegate.swift */; };
-		28F468EE1CBBFB9300B1E853 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28F468ED1CBBFB9300B1E853 /* FirstViewController.swift */; };
-		28F468F01CBBFB9300B1E853 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28F468EF1CBBFB9300B1E853 /* SecondViewController.swift */; };
 		28F468F31CBBFB9300B1E853 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28F468F11CBBFB9300B1E853 /* Main.storyboard */; };
 		28F468F51CBBFB9300B1E853 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 28F468F41CBBFB9300B1E853 /* Assets.xcassets */; };
 		28F468F81CBBFB9300B1E853 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28F468F61CBBFB9300B1E853 /* LaunchScreen.storyboard */; };
@@ -26,10 +25,9 @@
 		2830743D1CCEC57400E69D29 /* TwitterKitResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = TwitterKitResources.bundle; path = TwitterKit.framework/Versions/A/Resources/TwitterKitResources.bundle; sourceTree = "<group>"; };
 		2830743E1CCEC57400E69D29 /* TwitterCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TwitterCore.framework; sourceTree = "<group>"; };
 		283074451CCEC6B600E69D29 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		289F962A1CD7C4D300362BDF /* MyThreadsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyThreadsViewController.swift; sourceTree = "<group>"; };
 		28F468E81CBBFB9300B1E853 /* around.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = around.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		28F468EB1CBBFB9300B1E853 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		28F468ED1CBBFB9300B1E853 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
-		28F468EF1CBBFB9300B1E853 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		28F468F21CBBFB9300B1E853 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		28F468F41CBBFB9300B1E853 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		28F468F71CBBFB9300B1E853 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -53,6 +51,8 @@
 		283074431CCEC64100E69D29 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				289F96291CD7C49900362BDF /* Search */,
+				289F96281CD7C47400362BDF /* MyThreads */,
 				283074441CCEC65500E69D29 /* Login */,
 			);
 			name = ViewController;
@@ -64,6 +64,21 @@
 				283074451CCEC6B600E69D29 /* LoginViewController.swift */,
 			);
 			name = Login;
+			sourceTree = "<group>";
+		};
+		289F96281CD7C47400362BDF /* MyThreads */ = {
+			isa = PBXGroup;
+			children = (
+				289F962A1CD7C4D300362BDF /* MyThreadsViewController.swift */,
+			);
+			name = MyThreads;
+			sourceTree = "<group>";
+		};
+		289F96291CD7C49900362BDF /* Search */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Search;
 			sourceTree = "<group>";
 		};
 		28F468DF1CBBFB9300B1E853 = {
@@ -91,8 +106,6 @@
 			children = (
 				283074431CCEC64100E69D29 /* ViewController */,
 				28F468EB1CBBFB9300B1E853 /* AppDelegate.swift */,
-				28F468ED1CBBFB9300B1E853 /* FirstViewController.swift */,
-				28F468EF1CBBFB9300B1E853 /* SecondViewController.swift */,
 				28F468F11CBBFB9300B1E853 /* Main.storyboard */,
 				28F468F41CBBFB9300B1E853 /* Assets.xcassets */,
 				28F468F61CBBFB9300B1E853 /* LaunchScreen.storyboard */,
@@ -192,9 +205,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				283074461CCEC6B600E69D29 /* LoginViewController.swift in Sources */,
-				28F468F01CBBFB9300B1E853 /* SecondViewController.swift in Sources */,
 				28F468EC1CBBFB9300B1E853 /* AppDelegate.swift in Sources */,
-				28F468EE1CBBFB9300B1E853 /* FirstViewController.swift in Sources */,
+				289F962B1CD7C4D300362BDF /* MyThreadsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
