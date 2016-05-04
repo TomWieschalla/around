@@ -16,6 +16,7 @@ class MyThreadsViewController: UIViewController, UITableViewDelegate, UITableVie
     
     @IBOutlet weak var slideLabel: UILabel!
     var myThreads = [String]()
+    @IBOutlet weak var slideView: UIView!
     
     // MARK: - Base
     
@@ -27,6 +28,7 @@ class MyThreadsViewController: UIViewController, UITableViewDelegate, UITableVie
         
         loadSlideButton()
         loadSlideButtonAnimation()
+        drawSlideContainer()
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -41,14 +43,14 @@ class MyThreadsViewController: UIViewController, UITableViewDelegate, UITableVie
     // MARK: - Button and Animation
     
     func loadSlideButton() {
-        let swipeButtonLeft = UISwipeGestureRecognizer(target: self, action: #selector(MyThreadsViewController.buttonLeft))
-        swipeButtonLeft.direction = UISwipeGestureRecognizerDirection.Left
-        
-        let swipeView = UIView()
-        swipeView.frame = CGRectMake(slideLabel.frame.origin.x, slideLabel.frame.origin.y, slideLabel.frame.size.width+addButton.frame.size.width, slideLabel.frame.size.height)
-        
-        swipeView.addGestureRecognizer(swipeButtonLeft)
-        self.view.addSubview(swipeView)
+
+        addButton.highlighted = false
+        addButton.adjustsImageWhenHighlighted = false
+        let swipeButtonRight = UISwipeGestureRecognizer(target: self, action: #selector(MyThreadsViewController.buttonRight))
+        swipeButtonRight.direction = UISwipeGestureRecognizerDirection.Right
+
+        slideView.addGestureRecognizer(swipeButtonRight)
+        self.view.addSubview(slideView)
     }
     
     
@@ -75,8 +77,8 @@ class MyThreadsViewController: UIViewController, UITableViewDelegate, UITableVie
         maskLayer.frame = CGRectMake(-textWidth, 0.0, textWidth*2, textHeight)
         
         let maskAnimation = CABasicAnimation(keyPath: "position.x")
-        maskAnimation.fromValue = NSNumber(float: Float(textWidth))
-        maskAnimation.toValue = NSNumber(float: Float(textLayer.frame.origin.x-75))
+        maskAnimation.fromValue = NSNumber(float: 0.0)
+        maskAnimation.toValue = NSNumber(float: Float(textWidth+75))
         maskAnimation.repeatCount = Float.infinity
         maskAnimation.duration = 1.0
         maskAnimation.removedOnCompletion = false
@@ -88,9 +90,25 @@ class MyThreadsViewController: UIViewController, UITableViewDelegate, UITableVie
         
     }
     
-    func buttonLeft() {
+    func buttonRight() {
         let addThreadController = self.storyboard?.instantiateViewControllerWithIdentifier("addThreadView")
         self.navigationController!.pushViewController(addThreadController!, animated: true)
+    }
+    
+    func drawSlideContainer() {
+        let circlePath = UIBezierPath(roundedRect: CGRectMake(22, 451, 275, 53), cornerRadius: 20)
+        
+        let shapeLayer = CAShapeLayer()
+        shapeLayer.path = circlePath.CGPath
+        
+        //change the fill color
+        shapeLayer.fillColor = UIColor.clearColor().CGColor
+        //you can change the stroke color
+        shapeLayer.strokeColor = UIColor(red: 43/255, green: 132/255, blue: 210/255, alpha: 1).CGColor
+        //you can change the line width
+        shapeLayer.lineWidth = 1.0
+        
+        view.layer.addSublayer(shapeLayer)
     }
     
     // MARK: - TableView

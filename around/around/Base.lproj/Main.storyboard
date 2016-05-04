@@ -132,8 +132,21 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VQf-IT-cgx">
+                                <rect key="frame" x="0.0" y="440" width="320" height="76"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JKF-rJ-YBM" userLabel="Add Button">
+                                        <rect key="frame" x="21" y="10" width="55" height="55"/>
+                                        <gestureRecognizers/>
+                                        <state key="normal" image="new_100_100">
+                                            <color key="titleColor" red="0.16862745098039217" green="0.51764705882352946" blue="0.82352941176470584" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fAA-aD-Swc">
-                                <rect key="frame" x="39" y="447" width="177" height="55"/>
+                                <rect key="frame" x="83" y="449" width="177" height="55"/>
                                 <attributedString key="attributedText">
                                     <fragment content="Neuer Thread">
                                         <attributes>
@@ -145,11 +158,6 @@
                                 </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JKF-rJ-YBM" userLabel="Add Button">
-                                <rect key="frame" x="224" y="447" width="55" height="55"/>
-                                <gestureRecognizers/>
-                                <state key="normal" image="new_100_100"/>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
@@ -167,6 +175,7 @@
                         <outlet property="addButton" destination="JKF-rJ-YBM" id="mwn-h5-Rs8"/>
                         <outlet property="myThreadsTableView" destination="9Am-I0-u3O" id="hYi-zh-dat"/>
                         <outlet property="slideLabel" destination="fAA-aD-Swc" id="Qo4-rc-XlA"/>
+                        <outlet property="slideView" destination="VQf-IT-cgx" id="4Xb-67-YLO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
