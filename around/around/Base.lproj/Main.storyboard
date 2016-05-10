@@ -8,7 +8,7 @@
         <!--Meine Threads -->
         <scene sceneID="hNz-n2-bh7">
             <objects>
-                <viewController id="9pv-A4-QxB" customClass="MyThreadsViewController" customModule="around" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MyThreads" useStoryboardIdentifierAsRestorationIdentifier="YES" id="9pv-A4-QxB" customClass="MyThreadsViewController" customModule="around" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Ia1-K6-d13"/>
                         <viewControllerLayoutGuide type="bottom" id="4ug-Mw-9AY"/>
@@ -132,32 +132,16 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VQf-IT-cgx">
-                                <rect key="frame" x="0.0" y="440" width="320" height="76"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JKF-rJ-YBM" userLabel="Add Button">
-                                        <rect key="frame" x="21" y="10" width="55" height="55"/>
-                                        <gestureRecognizers/>
-                                        <state key="normal" image="new_100_100">
-                                            <color key="titleColor" red="0.16862745098039217" green="0.51764705882352946" blue="0.82352941176470584" alpha="1" colorSpace="calibratedRGB"/>
-                                        </state>
-                                    </button>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fAA-aD-Swc">
-                                <rect key="frame" x="83" y="449" width="177" height="55"/>
-                                <attributedString key="attributedText">
-                                    <fragment content="Neuer Thread">
-                                        <attributes>
-                                            <color key="NSColor" red="0.16862745098039217" green="0.51764705882352946" blue="0.82352941176470584" alpha="1" colorSpace="calibratedRGB"/>
-                                            <font key="NSFont" size="24" name="HelveticaNeue-Bold"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                        </attributes>
-                                    </fragment>
-                                </attributedString>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UAg-vh-m5g">
+                                <rect key="frame" x="20" y="452" width="280" height="44"/>
+                                <color key="backgroundColor" red="0.16862745100000001" green="0.51764705879999995" blue="0.82352941180000006" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Neuer Thread">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="y5q-Di-zB2" kind="show" id="VNp-bd-6c5"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
@@ -172,20 +156,18 @@
                     <navigationItem key="navigationItem" title="Meine Threads " id="82A-7y-PkQ"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="addButton" destination="JKF-rJ-YBM" id="mwn-h5-Rs8"/>
                         <outlet property="myThreadsTableView" destination="9Am-I0-u3O" id="hYi-zh-dat"/>
-                        <outlet property="slideLabel" destination="fAA-aD-Swc" id="Qo4-rc-XlA"/>
-                        <outlet property="slideView" destination="VQf-IT-cgx" id="4Xb-67-YLO"/>
+                        <outlet property="newThreadButton" destination="UAg-vh-m5g" id="28y-Ow-mi7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1282" y="-320"/>
         </scene>
-        <!--View Controller-->
+        <!--Neu-->
         <scene sceneID="dI4-cW-LVl">
             <objects>
-                <viewController storyboardIdentifier="addThreadView" id="y5q-Di-zB2" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="addThreadView" title="Neu" id="y5q-Di-zB2" customClass="NewThreadViewController" customModule="around" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Y5u-aF-4Bc"/>
                         <viewControllerLayoutGuide type="bottom" id="YJN-r2-PlC"/>
@@ -193,13 +175,77 @@
                     <view key="view" contentMode="scaleToFill" id="GX0-SQ-ZWg">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Wähle eine Beschreibung:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SzM-aJ-g6L">
+                                <rect key="frame" x="10" y="151" width="300" height="22"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Wähle deine Reichweite:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pNM-wk-a6g">
+                                <rect key="frame" x="10" y="353" width="300" height="22"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name des Threads" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="12X-rA-Eag">
+                                <rect key="frame" x="20" y="102" width="280" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="fFL-7h-pln">
+                                <rect key="frame" x="20" y="181" width="280" height="132"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <string key="text">Ein möglichst kurzer und beschreibender Name hilft bei der Veröffentlichung deines Threads. Eine aussagekräftige Beschreibung erhöht die Nützlichkeit des Threads. Je größer die Reichweite, desto höher ist die Wahrscheinlichkeit, Beiträge zu erhalten.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="500" minValue="50" maxValue="2000" translatesAutoresizingMaskIntoConstraints="NO" id="G0x-az-1Uo">
+                                <rect key="frame" x="18" y="383" width="284" height="31"/>
+                                <connections>
+                                    <action selector="sliderValueChanged:" destination="y5q-Di-zB2" eventType="valueChanged" id="sjR-NT-dm0"/>
+                                </connections>
+                            </slider>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sOF-Ko-s8T">
+                                <rect key="frame" x="20" y="452" width="280" height="44"/>
+                                <color key="backgroundColor" red="0.16862745100000001" green="0.51764705879999995" blue="0.82352941180000006" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Thread erstellen">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="createThreadButtonClicked:" destination="y5q-Di-zB2" eventType="touchUpInside" id="mIm-OC-FFj"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tEh-aD-jfo">
+                                <rect key="frame" x="139" y="414" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.16862745100000001" green="0.51764705879999995" blue="0.82352941180000006" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Wähle einen Namen:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bZe-LM-xAa">
+                                <rect key="frame" x="10" y="72" width="300" height="22"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="320" height="568"/>
+                    <connections>
+                        <outlet property="createThreadButton" destination="sOF-Ko-s8T" id="Vms-kK-9a5"/>
+                        <outlet property="descriptionLabel" destination="SzM-aJ-g6L" id="tbL-wE-vYD"/>
+                        <outlet property="descriptionTextView" destination="fFL-7h-pln" id="hTV-Uy-ilC"/>
+                        <outlet property="nameLabel" destination="bZe-LM-xAa" id="QKO-uW-YpC"/>
+                        <outlet property="rangeLabel" destination="pNM-wk-a6g" id="s3V-SK-gXA"/>
+                        <outlet property="rangeSlider" destination="G0x-az-1Uo" id="oYu-pd-Vgt"/>
+                        <outlet property="rangeValueLabel" destination="tEh-aD-jfo" id="VWM-be-CE0"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mdy-35-oea" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1857" y="-320"/>
+            <point key="canvasLocation" x="1834" y="-320"/>
         </scene>
         <!--Suche-->
         <scene sceneID="wg7-f3-ORb">
@@ -366,7 +412,6 @@
     </scenes>
     <resources>
         <image name="conf_30_30" width="30" height="30"/>
-        <image name="new_100_100" width="100" height="100"/>
         <image name="speech_bubbles_30_30" width="30" height="30"/>
     </resources>
 </document>

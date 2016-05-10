@@ -12,6 +12,7 @@
 		283074411CCEC57400E69D29 /* TwitterKitResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 2830743D1CCEC57400E69D29 /* TwitterKitResources.bundle */; };
 		283074421CCEC57400E69D29 /* TwitterCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2830743E1CCEC57400E69D29 /* TwitterCore.framework */; };
 		283074461CCEC6B600E69D29 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283074451CCEC6B600E69D29 /* LoginViewController.swift */; };
+		283903B01CE266EB00130F27 /* NewThreadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283903AF1CE266EB00130F27 /* NewThreadViewController.swift */; };
 		289F962B1CD7C4D300362BDF /* MyThreadsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 289F962A1CD7C4D300362BDF /* MyThreadsViewController.swift */; };
 		28F468EC1CBBFB9300B1E853 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28F468EB1CBBFB9300B1E853 /* AppDelegate.swift */; };
 		28F468F31CBBFB9300B1E853 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28F468F11CBBFB9300B1E853 /* Main.storyboard */; };
@@ -25,6 +26,7 @@
 		2830743D1CCEC57400E69D29 /* TwitterKitResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = TwitterKitResources.bundle; path = TwitterKit.framework/Versions/A/Resources/TwitterKitResources.bundle; sourceTree = "<group>"; };
 		2830743E1CCEC57400E69D29 /* TwitterCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TwitterCore.framework; sourceTree = "<group>"; };
 		283074451CCEC6B600E69D29 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		283903AF1CE266EB00130F27 /* NewThreadViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewThreadViewController.swift; sourceTree = "<group>"; };
 		289F962A1CD7C4D300362BDF /* MyThreadsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyThreadsViewController.swift; sourceTree = "<group>"; };
 		28F468E81CBBFB9300B1E853 /* around.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = around.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		28F468EB1CBBFB9300B1E853 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -51,6 +53,7 @@
 		283074431CCEC64100E69D29 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				283903AE1CE266CF00130F27 /* NewThread */,
 				289F96291CD7C49900362BDF /* Search */,
 				289F96281CD7C47400362BDF /* MyThreads */,
 				283074441CCEC65500E69D29 /* Login */,
@@ -64,6 +67,14 @@
 				283074451CCEC6B600E69D29 /* LoginViewController.swift */,
 			);
 			name = Login;
+			sourceTree = "<group>";
+		};
+		283903AE1CE266CF00130F27 /* NewThread */ = {
+			isa = PBXGroup;
+			children = (
+				283903AF1CE266EB00130F27 /* NewThreadViewController.swift */,
+			);
+			name = NewThread;
 			sourceTree = "<group>";
 		};
 		289F96281CD7C47400362BDF /* MyThreads */ = {
@@ -205,6 +216,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				283074461CCEC6B600E69D29 /* LoginViewController.swift in Sources */,
+				283903B01CE266EB00130F27 /* NewThreadViewController.swift in Sources */,
 				28F468EC1CBBFB9300B1E853 /* AppDelegate.swift in Sources */,
 				289F962B1CD7C4D300362BDF /* MyThreadsViewController.swift in Sources */,
 			);
