@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2814D54E1CEC500400DB9D4B /* Thread.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2814D54D1CEC500400DB9D4B /* Thread.swift */; };
 		2830743F1CCEC57400E69D29 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2830743B1CCEC57400E69D29 /* Fabric.framework */; };
 		283074401CCEC57400E69D29 /* TwitterKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2830743C1CCEC57400E69D29 /* TwitterKit.framework */; };
 		283074411CCEC57400E69D29 /* TwitterKitResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 2830743D1CCEC57400E69D29 /* TwitterKitResources.bundle */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2814D54D1CEC500400DB9D4B /* Thread.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Thread.swift; sourceTree = "<group>"; };
 		2830743B1CCEC57400E69D29 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
 		2830743C1CCEC57400E69D29 /* TwitterKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TwitterKit.framework; sourceTree = "<group>"; };
 		2830743D1CCEC57400E69D29 /* TwitterKitResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = TwitterKitResources.bundle; path = TwitterKit.framework/Versions/A/Resources/TwitterKitResources.bundle; sourceTree = "<group>"; };
@@ -50,6 +52,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2814D54C1CEC4FDA00DB9D4B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				2814D54D1CEC500400DB9D4B /* Thread.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		283074431CCEC64100E69D29 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -115,6 +125,7 @@
 		28F468EA1CBBFB9300B1E853 /* around */ = {
 			isa = PBXGroup;
 			children = (
+				2814D54C1CEC4FDA00DB9D4B /* Model */,
 				283074431CCEC64100E69D29 /* ViewController */,
 				28F468EB1CBBFB9300B1E853 /* AppDelegate.swift */,
 				28F468F11CBBFB9300B1E853 /* Main.storyboard */,
@@ -216,6 +227,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				283074461CCEC6B600E69D29 /* LoginViewController.swift in Sources */,
+				2814D54E1CEC500400DB9D4B /* Thread.swift in Sources */,
 				283903B01CE266EB00130F27 /* NewThreadViewController.swift in Sources */,
 				28F468EC1CBBFB9300B1E853 /* AppDelegate.swift in Sources */,
 				289F962B1CD7C4D300362BDF /* MyThreadsViewController.swift in Sources */,

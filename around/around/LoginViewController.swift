@@ -17,6 +17,8 @@ class LoginViewController: UIViewController {
         let logInButton = TWTRLogInButton { (session, error) in
             if session  != nil {
                 let tabBar = self.storyboard?.instantiateViewControllerWithIdentifier("MainViewController")
+                AppDelegate.USERNAME = session!.userName
+                self.initThreadDictionary()
                 self.presentViewController(tabBar!, animated: true, completion: nil)
             } else {
                 NSLog("Login error: %@", error!.localizedDescription);
@@ -33,15 +35,10 @@ class LoginViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func initThreadDictionary() {
+        let defaults = NSUserDefaults.standardUserDefaults()
+        let threadDictionary : [NSObject:AnyObject] = [:]
+        defaults.setValue(threadDictionary, forKey: AppDelegate.USERNAME)
     }
-    */
 
 }

@@ -12,7 +12,9 @@ class MyThreadsViewController: UIViewController, UITableViewDelegate, UITableVie
 
     @IBOutlet weak var myThreadsTableView: UITableView!
     
-    var myThreads = [String]()
+    var threadDictionary : [String:AnyObject] = [:]
+    var allThreads = [Thread]()
+    
     @IBOutlet weak var newThreadButton: UIButton!
     
     // MARK: - Base
@@ -27,8 +29,15 @@ class MyThreadsViewController: UIViewController, UITableViewDelegate, UITableVie
     
     }
     
-    override func viewDidAppear(animated: Bool) {
-        //loadSlideButtonAnimation()
+    override func viewWillAppear(animated: Bool) {
+        let defaults = NSUserDefaults.standardUserDefaults()
+        threadDictionary = defaults.dictionaryForKey(AppDelegate.USERNAME)!
+        let threads = threadDictionary.values
+        for data in threads {
+            let thread : Thread = NSKeyedUnarchiver.unarchiveObjectWithData(data as! NSData) as! Thread
+            allThreads.append(thread)
+        }
+        self.myThreadsTableView.reloadData()
     }
 
     override func didReceiveMemoryWarning() {
@@ -41,22 +50,22 @@ class MyThreadsViewController: UIViewController, UITableViewDelegate, UITableVie
     // MARK: - TableView
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if myThreads.isEmpty {
+        if allThreads.isEmpty {
             return 1
         } else {
-            return myThreads.count
+            return allThreads.count
         }
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = UITableViewCell(style: UITableViewCellStyle.Value1, reuseIdentifier: nil)
-        if myThreads.isEmpty {
+        if allThreads.isEmpty {
             cell.textLabel?.text = "Keine eigenen Threads vorhanden"
             cell.textLabel?.font = UIFont.systemFontOfSize(14.0)
             cell.selectionStyle = UITableViewCellSelectionStyle.None
             return cell
         } else {
-            cell.textLabel?.text = myThreads[indexPath.row]
+            cell.textLabel?.text = allThreads[indexPath.row].title
             return cell
         }
     }

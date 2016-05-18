@@ -7,18 +7,24 @@
 //
 
 import UIKit
+import CoreLocation
 
-class NewThreadViewController: UIViewController,UITextViewDelegate{
+class NewThreadViewController: UIViewController,UITextViewDelegate,UITextFieldDelegate{
 
     @IBOutlet weak var createThreadButton: UIButton!
     @IBOutlet weak var descriptionLabel: UILabel!
+    @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var descriptionTextView: UITextView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var rangeLabel: UILabel!
     @IBOutlet weak var rangeSlider: UISlider!
     @IBOutlet weak var rangeValueLabel: UILabel!
     
+    var threadName = ""
     var threadDescription = ""
+    var range: Int = 50
+    let defaults = NSUserDefaults.standardUserDefaults()
+    var threadDictionary : [String:AnyObject] = [:]
     
     let DESCRIPTION_PLACEHOLDER = "Ein möglichst kurzer und beschreibender Name hilft bei der Veröffentlichung deines Threads. Eine aussagekräftige Beschreibung erhöht die Nützlichkeit des Threads. Je größer die Reichweite, desto höher ist die Wahrscheinlichkeit, Beiträge zu erhalten."
     
@@ -32,8 +38,16 @@ class NewThreadViewController: UIViewController,UITextViewDelegate{
         
         // set delegates
         descriptionTextView.delegate = self
+        nameTextField.delegate = self
+        
+        // get threads
+        threadDictionary = defaults.dictionaryForKey(AppDelegate.USERNAME)!
         
         initUI()
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        defaults.setValue(threadDictionary, forKey: AppDelegate.USERNAME)
     }
 
     override func didReceiveMemoryWarning() {
@@ -70,12 +84,26 @@ class NewThreadViewController: UIViewController,UITextViewDelegate{
     // MARK: - Actions
     
     @IBAction func createThreadButtonClicked(sender: AnyObject) {
-        self.navigationController?.popToRootViewControllerAnimated(true)
+        if threadName == "" {
+            let alert : UIAlertController = UIAlertController(title: "Achtung", message: "Bitte einen Namen für deinen Thread wählen", preferredStyle: UIAlertControllerStyle.Alert)
+            alert.addAction(UIAlertAction(title: "Click", style: UIAlertActionStyle.Default, handler: nil))
+            self.presentViewController(alert, animated: true, completion: nil)
+        } else if threadDescription == "" {
+            let alert : UIAlertController = UIAlertController(title: "Achtung", message: "Bitte eine Beschreibung für deinen Thread wählen", preferredStyle: UIAlertControllerStyle.Alert)
+            alert.addAction(UIAlertAction(title: "Click", style: UIAlertActionStyle.Default, handler: nil))
+            self.presentViewController(alert, animated: true, completion: nil)
+        } else {
+            // save Thread
+            let thread : Thread = Thread(title: threadName, description: threadDescription, range: range)
+            let data : NSData = NSKeyedArchiver.archivedDataWithRootObject(thread)
+            threadDictionary[thread.title] = data
+            self.navigationController?.popToRootViewControllerAnimated(true)
+        }
     }
 
     @IBAction func sliderValueChanged(sender: UISlider) {
-        let currentValue = Int(sender.value)
-        rangeValueLabel.text = "\(currentValue)"
+        range = Int(sender.value)
+        rangeValueLabel.text = "\(range)"
     }
     
     func textViewDidBeginEditing(textView: UITextView) {
@@ -94,6 +122,27 @@ class NewThreadViewController: UIViewController,UITextViewDelegate{
             descriptionTextView.text = DESCRIPTION_PLACEHOLDER
             descriptionTextView.textColor = UIColor.lightGrayColor()
         }
+    }
+    
+    func textView(textView: UITextView, shouldChangeTextInRange range: NSRange, replacementText text: String) -> Bool {
+        if (text == "\n") {
+            textView.resignFirstResponder()
+            return false
+        }
+        return true
+    }
+    
+    func textFieldDidEndEditing(textField: UITextField) {
+        if textField.text!.isEmpty {
+            threadName = ""
+        } else {
+            threadName = textField.text!
+        }
+    }
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return false
     }
     
     func dismissKeyboard() {
