@@ -58,7 +58,7 @@ class MyThreadsViewController: UIViewController, UITableViewDelegate, UITableVie
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = UITableViewCell(style: UITableViewCellStyle.Value1, reuseIdentifier: nil)
+        let cell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: nil)
         if allThreads.isEmpty {
             cell.textLabel?.text = "Keine eigenen Threads vorhanden"
             cell.textLabel?.font = UIFont.systemFontOfSize(14.0)
@@ -66,12 +66,14 @@ class MyThreadsViewController: UIViewController, UITableViewDelegate, UITableVie
             return cell
         } else {
             cell.textLabel?.text = allThreads[indexPath.row].title
+            cell.detailTextLabel?.text = allThreads[indexPath.row].threadDescription
+            cell.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
             return cell
         }
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        //TODO
+        
     }
     
 
