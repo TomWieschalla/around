@@ -1,6 +1,7 @@
 platform :ios, "9.2"
 use_frameworks!
 target 'around' do
-  pod 'Firebase'
   pod 'JSQMessagesViewController'
+  pod 'Firebase/Core'
+  pod 'Firebase/Database'
 end

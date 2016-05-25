@@ -8,11 +8,16 @@
 
 import UIKit
 import TwitterKit
+import Firebase
 
 class LoginViewController: UIViewController {
 
+    var dataBase: FIRDatabaseReference!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+    
+        dataBase = FIRDatabase.database().reference()
 
         let logInButton = TWTRLogInButton { (session, error) in
             if session  != nil {

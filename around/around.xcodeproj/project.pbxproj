@@ -17,6 +17,11 @@
 		289F962B1CD7C4D300362BDF /* MyThreadsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 289F962A1CD7C4D300362BDF /* MyThreadsViewController.swift */; };
 		28BC252A1CF5AE1100D64651 /* ThreadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28BC25291CF5AE1100D64651 /* ThreadViewController.swift */; };
 		28BC25301CF5B9DE00D64651 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 28BC252F1CF5B9DE00D64651 /* GoogleService-Info.plist */; };
+		28BC25321CF5C34900D64651 /* libicucore.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 28BC25311CF5C34900D64651 /* libicucore.tbd */; };
+		28BC25341CF5C35300D64651 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 28BC25331CF5C35300D64651 /* libc++.tbd */; };
+		28BC25361CF5C35F00D64651 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28BC25351CF5C35F00D64651 /* CFNetwork.framework */; };
+		28BC25381CF5C36700D64651 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28BC25371CF5C36700D64651 /* Security.framework */; };
+		28BC253A1CF5C36F00D64651 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28BC25391CF5C36F00D64651 /* SystemConfiguration.framework */; };
 		28F468EC1CBBFB9300B1E853 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28F468EB1CBBFB9300B1E853 /* AppDelegate.swift */; };
 		28F468F31CBBFB9300B1E853 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28F468F11CBBFB9300B1E853 /* Main.storyboard */; };
 		28F468F51CBBFB9300B1E853 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 28F468F41CBBFB9300B1E853 /* Assets.xcassets */; };
@@ -36,6 +41,12 @@
 		289F962A1CD7C4D300362BDF /* MyThreadsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyThreadsViewController.swift; sourceTree = "<group>"; };
 		28BC25291CF5AE1100D64651 /* ThreadViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThreadViewController.swift; sourceTree = "<group>"; };
 		28BC252F1CF5B9DE00D64651 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		28BC25311CF5C34900D64651 /* libicucore.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libicucore.tbd; path = usr/lib/libicucore.tbd; sourceTree = SDKROOT; };
+		28BC25331CF5C35300D64651 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		28BC25351CF5C35F00D64651 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		28BC25371CF5C36700D64651 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		28BC25391CF5C36F00D64651 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		28BC253D1CF5CC0000D64651 /* around-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "around-Bridging-Header.h"; sourceTree = "<group>"; };
 		28F468E81CBBFB9300B1E853 /* around.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = around.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		28F468EB1CBBFB9300B1E853 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		28F468F21CBBFB9300B1E853 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -51,6 +62,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				28BC253A1CF5C36F00D64651 /* SystemConfiguration.framework in Frameworks */,
+				28BC25381CF5C36700D64651 /* Security.framework in Frameworks */,
+				28BC25361CF5C35F00D64651 /* CFNetwork.framework in Frameworks */,
+				28BC25341CF5C35300D64651 /* libc++.tbd in Frameworks */,
+				28BC25321CF5C34900D64651 /* libicucore.tbd in Frameworks */,
 				2830743F1CCEC57400E69D29 /* Fabric.framework in Frameworks */,
 				283074421CCEC57400E69D29 /* TwitterCore.framework in Frameworks */,
 				283074401CCEC57400E69D29 /* TwitterKit.framework in Frameworks */,
@@ -153,6 +169,7 @@
 				28F468F41CBBFB9300B1E853 /* Assets.xcassets */,
 				28BC252F1CF5B9DE00D64651 /* GoogleService-Info.plist */,
 				28F468F91CBBFB9300B1E853 /* Info.plist */,
+				28BC253D1CF5CC0000D64651 /* around-Bridging-Header.h */,
 			);
 			path = around;
 			sourceTree = "<group>";
@@ -160,6 +177,11 @@
 		3268D7F1EC64FE4FF55B94A1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				28BC25391CF5C36F00D64651 /* SystemConfiguration.framework */,
+				28BC25371CF5C36700D64651 /* Security.framework */,
+				28BC25351CF5C35F00D64651 /* CFNetwork.framework */,
+				28BC25331CF5C35300D64651 /* libc++.tbd */,
+				28BC25311CF5C34900D64651 /* libicucore.tbd */,
 				52CA77EEF71B51FE1D751A67 /* Pods_around.framework */,
 			);
 			name = Frameworks;
@@ -204,7 +226,7 @@
 		28F468E01CBBFB9300B1E853 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0720;
+				LastSwiftUpdateCheck = 0730;
 				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = Beuth;
 				TargetAttributes = {
@@ -430,6 +452,7 @@
 			baseConfigurationReference = 90A50C4BBC10494A19102C9E /* Pods-around.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -439,6 +462,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = de.bht.ema.around;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "around/around-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -447,6 +472,7 @@
 			baseConfigurationReference = 12364E7B7038638F3CE13486 /* Pods-around.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -456,6 +482,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = de.bht.ema.around;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "around/around-Bridging-Header.h";
 			};
 			name = Release;
 		};
