@@ -3,5 +3,4 @@ use_frameworks!
 target 'around' do
   pod 'Firebase'
   pod 'JSQMessagesViewController'
-  pod 'Firebase'
 end
