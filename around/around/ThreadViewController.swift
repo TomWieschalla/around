@@ -13,6 +13,8 @@ import JSQMessagesViewController
 class ThreadViewController: JSQMessagesViewController {
 
     // MARK: Properties
+    
+    var thread: Thread
     var messages = [JSQMessage]()
     var outgoingBubbleImageView: JSQMessagesBubbleImage!
     var incomingBubbleImageView: JSQMessagesBubbleImage!
@@ -30,12 +32,21 @@ class ThreadViewController: JSQMessagesViewController {
         }
     }
     
+    init(thread: Thread) {
+        self.thread = thread
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupBubbles()
         collectionView!.collectionViewLayout.incomingAvatarViewSize = CGSizeZero
         collectionView!.collectionViewLayout.outgoingAvatarViewSize = CGSizeZero
-        messageRef = rootRef.child("messages")
+        messageRef = rootRef.child("Chat"+thread.threadID)
     }
     
     override func viewDidAppear(animated: Bool) {

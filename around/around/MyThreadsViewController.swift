@@ -24,37 +24,31 @@ class MyThreadsViewController: UIViewController, UITableViewDelegate, UITableVie
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // TODO: Load user specific threads from backend api
-        // myThreads =
-        
-        newThreadButton.layer.cornerRadius = 5
-    
-    }
-    
-    override func viewWillAppear(animated: Bool) {
         allThreads = [Thread]()
         let rootRef = FIRDatabase.database().reference()
         let threadsRef = rootRef.child(AppDelegate.USERNAME+"_threads")
         
         threadsRef.observeEventType(.ChildAdded) { (snapshot: FIRDataSnapshot!) in
-        
+            
             let title = snapshot.value!["title"] as! String
             let threadDesc = snapshot.value!["description"] as! String
             let range = snapshot.value!["range"] as! Int
             
-            let newThread: Thread = Thread(title: title, description: threadDesc, range: range)
+            let newThread: Thread = Thread(threadID: snapshot.key, title: title, description: threadDesc, range: range)
             self.allThreads.append(newThread)
-        
+            self.myThreadsTableView.reloadData()
         }
-        /*
-        let defaults = NSUserDefaults.standardUserDefaults()
-        threadDictionary = defaults.dictionaryForKey(AppDelegate.USERNAME)!
-        let threads = threadDictionary.values
-        for data in threads {
-            let thread : Thread = NSKeyedUnarchiver.unarchiveObjectWithData(data as! NSData) as! Thread
-            allThreads.append(thread)
-        } */
-        self.myThreadsTableView.reloadData()
+        
+        newThreadButton.layer.cornerRadius = 5
+    
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+       
     }
 
     override func didReceiveMemoryWarning() {
@@ -92,10 +86,11 @@ class MyThreadsViewController: UIViewController, UITableViewDelegate, UITableVie
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         if allThreads.count > 0 {
             let navVC = self.navigationController
-            let chatVC = ThreadViewController()
+            let chatVC = ThreadViewController(thread: allThreads[indexPath.row])
             chatVC.senderId = AppDelegate.SENDER_ID
             chatVC.senderDisplayName = AppDelegate.USERNAME
             chatVC.title = allThreads[indexPath.row].title
+            chatVC.thread = allThreads[indexPath.row]
             navVC?.pushViewController(chatVC, animated: true)
         }
     }
