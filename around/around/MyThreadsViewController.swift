@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import JSQMessagesViewController
+import Firebase
 
 class MyThreadsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
@@ -30,13 +32,28 @@ class MyThreadsViewController: UIViewController, UITableViewDelegate, UITableVie
     }
     
     override func viewWillAppear(animated: Bool) {
+        allThreads = [Thread]()
+        let rootRef = FIRDatabase.database().reference()
+        let threadsRef = rootRef.child(AppDelegate.USERNAME+"_threads")
+        
+        threadsRef.observeEventType(.ChildAdded) { (snapshot: FIRDataSnapshot!) in
+        
+            let title = snapshot.value!["title"] as! String
+            let threadDesc = snapshot.value!["description"] as! String
+            let range = snapshot.value!["range"] as! Int
+            
+            let newThread: Thread = Thread(title: title, description: threadDesc, range: range)
+            self.allThreads.append(newThread)
+        
+        }
+        /*
         let defaults = NSUserDefaults.standardUserDefaults()
         threadDictionary = defaults.dictionaryForKey(AppDelegate.USERNAME)!
         let threads = threadDictionary.values
         for data in threads {
             let thread : Thread = NSKeyedUnarchiver.unarchiveObjectWithData(data as! NSData) as! Thread
             allThreads.append(thread)
-        }
+        } */
         self.myThreadsTableView.reloadData()
     }
 
@@ -73,7 +90,14 @@ class MyThreadsViewController: UIViewController, UITableViewDelegate, UITableVie
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        
+        if allThreads.count > 0 {
+            let navVC = self.navigationController
+            let chatVC = ThreadViewController()
+            chatVC.senderId = AppDelegate.SENDER_ID
+            chatVC.senderDisplayName = AppDelegate.USERNAME
+            chatVC.title = allThreads[indexPath.row].title
+            navVC?.pushViewController(chatVC, animated: true)
+        }
     }
     
 

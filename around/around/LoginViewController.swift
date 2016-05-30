@@ -12,19 +12,16 @@ import Firebase
 
 class LoginViewController: UIViewController {
 
-    var dataBase: FIRDatabaseReference!
+    var dataBaseRef: FIRDatabaseReference!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    
-        dataBase = FIRDatabase.database().reference()
 
         let logInButton = TWTRLogInButton { (session, error) in
             if session  != nil {
-                let tabBar = self.storyboard?.instantiateViewControllerWithIdentifier("MainViewController")
                 AppDelegate.USERNAME = session!.userName
                 self.initThreadDictionary()
-                self.presentViewController(tabBar!, animated: true, completion: nil)
+                self.connectDatabase(session!)
             } else {
                 NSLog("Login error: %@", error!.localizedDescription);
             }
@@ -44,6 +41,20 @@ class LoginViewController: UIViewController {
         let defaults = NSUserDefaults.standardUserDefaults()
         let threadDictionary : [NSObject:AnyObject] = [:]
         defaults.setValue(threadDictionary, forKey: AppDelegate.USERNAME)
+    }
+    
+    func connectDatabase(session: TWTRSession) {
+        dataBaseRef = FIRDatabase.database().reference()
+        let credential = FIRTwitterAuthProvider.credentialWithToken(session.authToken, secret: session.authTokenSecret)
+        FIRAuth.auth()?.signInWithCredential(credential) {(user,error) in
+            if error != nil {
+                NSLog("Firebase-Twitter Authentification failed", error!.localizedDescription)
+            } else {
+                AppDelegate.SENDER_ID = (user?.uid)!
+                let tabBar = self.storyboard?.instantiateViewControllerWithIdentifier("MainViewController")
+                self.presentViewController(tabBar!, animated: true, completion: nil)
+            }
+        }
     }
 
 }

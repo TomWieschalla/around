@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreLocation
+import Firebase
 
 class NewThreadViewController: UIViewController,UITextViewDelegate,UITextFieldDelegate{
 
@@ -25,6 +26,7 @@ class NewThreadViewController: UIViewController,UITextViewDelegate,UITextFieldDe
     var range: Int = 50
     let defaults = NSUserDefaults.standardUserDefaults()
     var threadDictionary : [String:AnyObject] = [:]
+    let rootRef = FIRDatabase.database().reference()
     
     let DESCRIPTION_PLACEHOLDER = "Ein möglichst kurzer und beschreibender Name hilft bei der Veröffentlichung deines Threads. Eine aussagekräftige Beschreibung erhöht die Nützlichkeit des Threads. Je größer die Reichweite, desto höher ist die Wahrscheinlichkeit, Beiträge zu erhalten."
     
@@ -94,9 +96,14 @@ class NewThreadViewController: UIViewController,UITextViewDelegate,UITextFieldDe
             self.presentViewController(alert, animated: true, completion: nil)
         } else {
             // save Thread
-            let thread : Thread = Thread(title: threadName, description: threadDescription, range: range)
-            let data : NSData = NSKeyedArchiver.archivedDataWithRootObject(thread)
-            threadDictionary[thread.title] = data
+            let threadsRef = rootRef.child(AppDelegate.USERNAME+"_threads")
+            let threadRef = threadsRef.childByAutoId()
+            let threadItem = [
+            "title": threadName,
+            "description": threadDescription,
+            "range": range
+            ]
+            threadRef.setValue(threadItem)
             self.navigationController?.popToRootViewControllerAnimated(true)
         }
     }
