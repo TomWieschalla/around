@@ -12,37 +12,37 @@ import Firebase
 
 class LoginViewController: UIViewController {
 
+    // Firebase db access
     var dataBaseRef: FIRDatabaseReference!
     
+    /**
+        This method loads the twitter login button and initializes the database connection
+     */
     override func viewDidLoad() {
         super.viewDidLoad()
 
         let logInButton = TWTRLogInButton { (session, error) in
             if session  != nil {
+                // sets the twitter username as a global attribute
                 AppDelegate.USERNAME = session!.userName
-                self.initThreadDictionary()
                 self.connectDatabase(session!)
             } else {
                 NSLog("Login error: %@", error!.localizedDescription);
             }
         }
         
+        // sets UI settings up
         logInButton.center = self.view.center
         self.view.addSubview(logInButton)
 
     }
+    
+    /**
+        This method initializes the connection to the firebase db with the help of the twitter login
+        session
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-    func initThreadDictionary() {
-        let defaults = NSUserDefaults.standardUserDefaults()
-        let threadDictionary : [NSObject:AnyObject] = [:]
-        defaults.setValue(threadDictionary, forKey: AppDelegate.USERNAME)
-    }
-    
+        - session: Twitter login session
+     */
     func connectDatabase(session: TWTRSession) {
         dataBaseRef = FIRDatabase.database().reference()
         let credential = FIRTwitterAuthProvider.credentialWithToken(session.authToken, secret: session.authTokenSecret)
@@ -50,8 +50,11 @@ class LoginViewController: UIViewController {
             if error != nil {
                 NSLog("Firebase-Twitter Authentification failed", error!.localizedDescription)
             } else {
+                // sets the firebase userid as a global attribute
                 AppDelegate.SENDER_ID = (user?.uid)!
-                let tabBar = self.storyboard?.instantiateViewControllerWithIdentifier("MainViewController")
+                
+                // pushes to the main navigation controller (TabBarController)
+                let tabBar = self.storyboard?.instantiateViewControllerWithIdentifier("MainTabBarController")
                 self.presentViewController(tabBar!, animated: true, completion: nil)
             }
         }

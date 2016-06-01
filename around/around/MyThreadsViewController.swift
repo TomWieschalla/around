@@ -17,15 +17,21 @@ class MyThreadsViewController: UIViewController, UITableViewDelegate, UITableVie
     var threadDictionary : [String:AnyObject] = [:]
     var allThreads = [Thread]()
     
+    // init Firebase DB reference
+    let rootRef = FIRDatabase.database().reference()
+    
     @IBOutlet weak var newThreadButton: UIButton!
     
     // MARK: - Base
     
+    /**
+        This method loads all saved threads from firebase and collects them into an array
+     */
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.setUISettings()
 
         allThreads = [Thread]()
-        let rootRef = FIRDatabase.database().reference()
         let threadsRef = rootRef.child(AppDelegate.USERNAME+"_threads")
         
         threadsRef.observeEventType(.ChildAdded) { (snapshot: FIRDataSnapshot!) in
@@ -38,28 +44,28 @@ class MyThreadsViewController: UIViewController, UITableViewDelegate, UITableVie
             self.allThreads.append(newThread)
             self.myThreadsTableView.reloadData()
         }
-        
-        newThreadButton.layer.cornerRadius = 5
-    
     }
-    
-    override func viewDidAppear(animated: Bool) {
-        
-    }
-    
+    /**
+        This method reloads the data because of selection marks and initialization
+     */
     override func viewWillAppear(animated: Bool) {
-       
+        self.myThreadsTableView.reloadData()
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    /**
+        This method is setting all UI Settings up
+     */
+    private func setUISettings() {
+        newThreadButton.layer.cornerRadius = 5
     }
     
 
     
     // MARK: - TableView
     
+    /**
+        This method defines how much cells should be shown
+     */
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if allThreads.isEmpty {
             return 1
@@ -68,6 +74,10 @@ class MyThreadsViewController: UIViewController, UITableViewDelegate, UITableVie
         }
     }
     
+    /**
+        This method creates the Thread cells with saved properties or shows an inactive cell
+        if no Threads exists
+     */
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: nil)
         if allThreads.isEmpty {
@@ -83,6 +93,9 @@ class MyThreadsViewController: UIViewController, UITableViewDelegate, UITableVie
         }
     }
     
+    /**
+        This method navigates to the specific ThreadViewController related to which cell was touched
+     */
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         if allThreads.count > 0 {
             let navVC = self.navigationController
@@ -95,15 +108,17 @@ class MyThreadsViewController: UIViewController, UITableViewDelegate, UITableVie
         }
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    /**
+        This Method deletes the touched tableviewcell, its corresponding Thread and the firebase data
+        reference
+     */
+    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        if editingStyle == .Delete {
+            let threadId = allThreads[indexPath.row].threadID
+            let threadsRef = rootRef.child(AppDelegate.USERNAME+"_threads")
+            threadsRef.child(threadId).removeValue()
+            allThreads.removeAtIndex(indexPath.row)
+            tableView.reloadData()
+        }
     }
-    */
-
 }
