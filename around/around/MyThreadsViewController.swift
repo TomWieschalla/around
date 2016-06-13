@@ -104,6 +104,7 @@ class MyThreadsViewController: UIViewController, UITableViewDelegate, UITableVie
             chatVC.senderDisplayName = AppDelegate.USERNAME
             chatVC.title = allThreads[indexPath.row].title
             chatVC.thread = allThreads[indexPath.row]
+            chatVC.newStoryboard = self.storyboard
             navVC?.pushViewController(chatVC, animated: true)
         }
     }

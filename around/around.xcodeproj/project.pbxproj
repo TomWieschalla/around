@@ -22,6 +22,7 @@
 		28BC25361CF5C35F00D64651 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28BC25351CF5C35F00D64651 /* CFNetwork.framework */; };
 		28BC25381CF5C36700D64651 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28BC25371CF5C36700D64651 /* Security.framework */; };
 		28BC253A1CF5C36F00D64651 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28BC25391CF5C36F00D64651 /* SystemConfiguration.framework */; };
+		28CA55421D0E95A300F7D569 /* InfoThreadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28CA55411D0E95A300F7D569 /* InfoThreadViewController.swift */; };
 		28F468EC1CBBFB9300B1E853 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28F468EB1CBBFB9300B1E853 /* AppDelegate.swift */; };
 		28F468F31CBBFB9300B1E853 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28F468F11CBBFB9300B1E853 /* Main.storyboard */; };
 		28F468F51CBBFB9300B1E853 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 28F468F41CBBFB9300B1E853 /* Assets.xcassets */; };
@@ -47,6 +48,7 @@
 		28BC25371CF5C36700D64651 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		28BC25391CF5C36F00D64651 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		28BC253D1CF5CC0000D64651 /* around-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "around-Bridging-Header.h"; sourceTree = "<group>"; };
+		28CA55411D0E95A300F7D569 /* InfoThreadViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoThreadViewController.swift; sourceTree = "<group>"; };
 		28F468E81CBBFB9300B1E853 /* around.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = around.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		28F468EB1CBBFB9300B1E853 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		28F468F21CBBFB9300B1E853 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -132,6 +134,7 @@
 			isa = PBXGroup;
 			children = (
 				28BC25291CF5AE1100D64651 /* ThreadViewController.swift */,
+				28CA55411D0E95A300F7D569 /* InfoThreadViewController.swift */,
 			);
 			name = Thread;
 			sourceTree = "<group>";
@@ -339,6 +342,7 @@
 				2814D54E1CEC500400DB9D4B /* Thread.swift in Sources */,
 				28BC252A1CF5AE1100D64651 /* ThreadViewController.swift in Sources */,
 				283903B01CE266EB00130F27 /* NewThreadViewController.swift in Sources */,
+				28CA55421D0E95A300F7D569 /* InfoThreadViewController.swift in Sources */,
 				28F468EC1CBBFB9300B1E853 /* AppDelegate.swift in Sources */,
 				289F962B1CD7C4D300362BDF /* MyThreadsViewController.swift in Sources */,
 			);

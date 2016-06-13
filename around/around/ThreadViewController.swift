@@ -14,6 +14,9 @@ class ThreadViewController: JSQMessagesViewController {
 
     // MARK: Properties
     
+    // Storyboard
+    var newStoryboard: UIStoryboard?
+    
     // Chat-Thread
     var thread: Thread
     
@@ -67,6 +70,14 @@ class ThreadViewController: JSQMessagesViewController {
         super.viewDidLoad()
         self.setUpUISettings()
         messageRef = rootRef.child("Chat"+thread.threadID)
+        
+        let infoButton = UIButton(type: UIButtonType.InfoLight)
+        infoButton.addTarget(self, action: #selector(showInfo), forControlEvents: UIControlEvents.TouchUpInside)
+        let barItem = UIBarButtonItem(customView: infoButton)
+        self.navigationItem.setRightBarButtonItem(barItem, animated: true)
+        
+        self.observeMessages()
+        self.observeTyping()
     }
     
     /**
@@ -74,8 +85,16 @@ class ThreadViewController: JSQMessagesViewController {
      */
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        self.observeMessages()
-        self.observeTyping()
+        //self.observeMessages()
+        //self.observeTyping()
+    }
+    
+    @objc private func showInfo() {
+        let infoVC = newStoryboard!.instantiateViewControllerWithIdentifier("infoThreadViewController") as! InfoThreadViewController
+        infoVC.threadName = thread.title
+        infoVC.threadDescription = thread.threadDescription
+        infoVC.threadRange = String(thread.range)
+        self.navigationController?.pushViewController(infoVC, animated: true)
     }
     
     /**
