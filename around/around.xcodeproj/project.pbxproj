@@ -14,6 +14,11 @@
 		283074421CCEC57400E69D29 /* TwitterCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2830743E1CCEC57400E69D29 /* TwitterCore.framework */; };
 		283074461CCEC6B600E69D29 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283074451CCEC6B600E69D29 /* LoginViewController.swift */; };
 		283903B01CE266EB00130F27 /* NewThreadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283903AF1CE266EB00130F27 /* NewThreadViewController.swift */; };
+		284453391D189AF300F41C30 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 284453381D189AF300F41C30 /* SearchViewController.swift */; };
+		287B886B1D2D22C7001F89EB /* AngleGradientLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 287B886A1D2D22C7001F89EB /* AngleGradientLayer.m */; };
+		287B88721D2D24BA001F89EB /* Arcs.m in Sources */ = {isa = PBXBuildFile; fileRef = 287B886D1D2D24BA001F89EB /* Arcs.m */; };
+		287B88731D2D24BA001F89EB /* Dot.m in Sources */ = {isa = PBXBuildFile; fileRef = 287B886F1D2D24BA001F89EB /* Dot.m */; };
+		287B88741D2D24BA001F89EB /* Radar.m in Sources */ = {isa = PBXBuildFile; fileRef = 287B88711D2D24BA001F89EB /* Radar.m */; };
 		289F962B1CD7C4D300362BDF /* MyThreadsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 289F962A1CD7C4D300362BDF /* MyThreadsViewController.swift */; };
 		28BC252A1CF5AE1100D64651 /* ThreadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28BC25291CF5AE1100D64651 /* ThreadViewController.swift */; };
 		28BC25301CF5B9DE00D64651 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 28BC252F1CF5B9DE00D64651 /* GoogleService-Info.plist */; };
@@ -39,6 +44,15 @@
 		2830743E1CCEC57400E69D29 /* TwitterCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TwitterCore.framework; sourceTree = "<group>"; };
 		283074451CCEC6B600E69D29 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		283903AF1CE266EB00130F27 /* NewThreadViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewThreadViewController.swift; sourceTree = "<group>"; };
+		284453381D189AF300F41C30 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		287B88691D2D22C7001F89EB /* AngleGradientLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AngleGradientLayer.h; path = "../../../../../../Downloads/Radar-master/Radar/AngleGradient/AngleGradientLayer.h"; sourceTree = "<group>"; };
+		287B886A1D2D22C7001F89EB /* AngleGradientLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AngleGradientLayer.m; path = "../../../../../../Downloads/Radar-master/Radar/AngleGradient/AngleGradientLayer.m"; sourceTree = "<group>"; };
+		287B886C1D2D24BA001F89EB /* Arcs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Arcs.h; path = "../../../../../../Downloads/Radar-master/Radar/Views/Arcs.h"; sourceTree = "<group>"; };
+		287B886D1D2D24BA001F89EB /* Arcs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Arcs.m; path = "../../../../../../Downloads/Radar-master/Radar/Views/Arcs.m"; sourceTree = "<group>"; };
+		287B886E1D2D24BA001F89EB /* Dot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Dot.h; path = "../../../../../../Downloads/Radar-master/Radar/Views/Dot.h"; sourceTree = "<group>"; };
+		287B886F1D2D24BA001F89EB /* Dot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Dot.m; path = "../../../../../../Downloads/Radar-master/Radar/Views/Dot.m"; sourceTree = "<group>"; };
+		287B88701D2D24BA001F89EB /* Radar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Radar.h; path = "../../../../../../Downloads/Radar-master/Radar/Views/Radar.h"; sourceTree = "<group>"; };
+		287B88711D2D24BA001F89EB /* Radar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Radar.m; path = "../../../../../../Downloads/Radar-master/Radar/Views/Radar.m"; sourceTree = "<group>"; };
 		289F962A1CD7C4D300362BDF /* MyThreadsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyThreadsViewController.swift; sourceTree = "<group>"; };
 		28BC25291CF5AE1100D64651 /* ThreadViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThreadViewController.swift; sourceTree = "<group>"; };
 		28BC252F1CF5B9DE00D64651 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -115,6 +129,21 @@
 			name = NewThread;
 			sourceTree = "<group>";
 		};
+		287B88681D2D21F6001F89EB /* ObjectiveC */ = {
+			isa = PBXGroup;
+			children = (
+				287B886C1D2D24BA001F89EB /* Arcs.h */,
+				287B886D1D2D24BA001F89EB /* Arcs.m */,
+				287B886E1D2D24BA001F89EB /* Dot.h */,
+				287B886F1D2D24BA001F89EB /* Dot.m */,
+				287B88701D2D24BA001F89EB /* Radar.h */,
+				287B88711D2D24BA001F89EB /* Radar.m */,
+				287B88691D2D22C7001F89EB /* AngleGradientLayer.h */,
+				287B886A1D2D22C7001F89EB /* AngleGradientLayer.m */,
+			);
+			name = ObjectiveC;
+			sourceTree = "<group>";
+		};
 		289F96281CD7C47400362BDF /* MyThreads */ = {
 			isa = PBXGroup;
 			children = (
@@ -126,6 +155,7 @@
 		289F96291CD7C49900362BDF /* Search */ = {
 			isa = PBXGroup;
 			children = (
+				284453381D189AF300F41C30 /* SearchViewController.swift */,
 			);
 			name = Search;
 			sourceTree = "<group>";
@@ -164,6 +194,7 @@
 		28F468EA1CBBFB9300B1E853 /* around */ = {
 			isa = PBXGroup;
 			children = (
+				287B88681D2D21F6001F89EB /* ObjectiveC */,
 				2814D54C1CEC4FDA00DB9D4B /* Model */,
 				283074431CCEC64100E69D29 /* ViewController */,
 				28F468EB1CBBFB9300B1E853 /* AppDelegate.swift */,
@@ -339,11 +370,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				283074461CCEC6B600E69D29 /* LoginViewController.swift in Sources */,
+				284453391D189AF300F41C30 /* SearchViewController.swift in Sources */,
+				287B88731D2D24BA001F89EB /* Dot.m in Sources */,
 				2814D54E1CEC500400DB9D4B /* Thread.swift in Sources */,
+				287B886B1D2D22C7001F89EB /* AngleGradientLayer.m in Sources */,
 				28BC252A1CF5AE1100D64651 /* ThreadViewController.swift in Sources */,
 				283903B01CE266EB00130F27 /* NewThreadViewController.swift in Sources */,
+				287B88721D2D24BA001F89EB /* Arcs.m in Sources */,
 				28CA55421D0E95A300F7D569 /* InfoThreadViewController.swift in Sources */,
 				28F468EC1CBBFB9300B1E853 /* AppDelegate.swift in Sources */,
+				287B88741D2D24BA001F89EB /* Radar.m in Sources */,
 				289F962B1CD7C4D300362BDF /* MyThreadsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -458,6 +494,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEFINES_MODULE = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -478,6 +515,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEFINES_MODULE = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
